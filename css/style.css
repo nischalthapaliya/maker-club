@@ -128,54 +128,48 @@ abbr[data-original-title] {
     background-color: #666;
   }
 
-  .meeting-section {
-    padding: 20px;
-    text-align: center;
+/* Heading Style */
+.meeting-section h2 {
+  text-align: center;
+  color: #000;
+  margin-bottom: 20px;
 }
 
-h2 {
-  color: #fff;
-}
-
-/* Ensure the container spans the full width of the screen */
+/* Carousel Container */
 .carousel-container {
   position: relative;
-  width: 100vw; /* Full viewport width */
-  height: auto; /* Automatically adjust height based on content */
-  margin: 0; /* Remove any default margin */
+  width: 80vw; /* Full viewport width */
+  height: auto; /* Auto height to fit content */
+  margin: 0; /* Remove default margin */
   padding: 0; /* Remove padding */
-  overflow: hidden; /* Prevent horizontal scrolling */
+  overflow: hidden; /* Hide overflow content */
   background-color: white;
-  border-radius: 10px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  justify-content: center; /* Ensure cards are centered within the container */
-  box-sizing: border-box;
 }
 
-/* Carousel Slider - Stretch across full width */
+/* Carousel Slider */
 .carousel-slider {
   display: flex;
+  width: 100%; /* Full width of the container */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove padding */
   transition: transform 0.5s ease-in-out;
-  width: 100%; /* Full width */
 }
 
 /* Individual Cards */
 .card {
-  flex: 0 0 25%; /* Show 4 cards at a time (25% of the total width) */
+  flex: 0 0 25%; /* Show exactly 4 cards (25% each) */
   box-sizing: border-box;
-  padding: 10px;
-  margin: 0; /* Remove margins between the cards */
+  padding: 8x;
   text-align: center;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 0; /* Ensure cards take the full width of 25% */
-  max-width: 100%; /* Prevents the cards from growing */
+  min-width: 0;
 }
 
-/* Image Placeholder for cards */
+/* Placeholder for Images */
 .image-placeholder {
   height: 150px;
   background-color: #ddd;
@@ -183,7 +177,7 @@ h2 {
   margin-bottom: 10px;
 }
 
-/* Carousel Navigation Buttons */
+/* Navigation Buttons */
 .carousel-button {
   position: absolute;
   top: 50%;
@@ -213,13 +207,8 @@ h2 {
 /* Pagination Dots */
 .pagination {
   margin-top: 20px;
-  position: absolute;
-  bottom: 10px; /* Adjust to place them at the bottom of the carousel */
-  left: 50%; /* Center horizontally */
-  transform: translateX(-50%); /* Center align the dots horizontally */
   display: flex;
-  justify-content: center; /* Ensure dots are centered */
-  z-index: 5; /* Ensure dots are above carousel */
+  justify-content: center;
 }
 
 .dot {
@@ -236,8 +225,6 @@ h2 {
 .dot.active {
   background: #007bff;
 }
-
-
 
 address {
   margin-bottom: 1rem;
