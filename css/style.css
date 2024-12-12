@@ -128,90 +128,147 @@ abbr[data-original-title] {
     background-color: #666;
   }
 
-/* Heading Style */
-.meeting-section h2 {
-  text-align: center;
-  color: #000;
-  margin-bottom: 20px;
+  /* General Section Background */
+  .events-header {
+    text-align: center;
+    padding-bottom: 20px;  /* Provides space between the header and the event details */
 }
 
-/* Carousel Container */
-.carousel-container {
+.events-header h2 {
+    color: #333;
+}
+
+.events-header p {
+    color: #666;
+    margin-top: 5px;  /* Small top margin for better visual separation */
+}
+
+
+/* Content Container for Robotics Club Meetup */
+.events-content {
   position: relative;
-  width: 80vw; /* Full viewport width */
-  height: auto; /* Auto height to fit content */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove padding */
-  overflow: hidden; /* Hide overflow content */
-  background-color: white;
-  display: flex;
-  align-items: center;
+  margin: 20px 0;
 }
 
-/* Carousel Slider */
-.carousel-slider {
+.events-container {
   display: flex;
-  width: 100%; /* Full width of the container */
-  margin: 0; /* Remove default margin */
-  padding: 0; /* Remove padding */
-  transition: transform 0.5s ease-in-out;
+  overflow: hidden;
+  width: 100%; // Ensure the container is wide enough to hold any slide
+  justify-content: center;
 }
 
-/* Individual Cards */
-.card {
-  flex: 0 0 25%; /* Show exactly 4 cards (25% each) */
-  box-sizing: border-box;
-  padding: 8x;
+/* Slide and Card Styling */
+.event-slide{
+  min-width: 100px;
+  margin: 0 10px;
   text-align: center;
+  flex: 0 0 20%; /* Adjust based on visible cards */
+  box-sizing: border-box;
+  padding: 8px;
   background: white;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 0;
+  min-width: 250px; /* Ensure cards do not shrink too small */
 }
 
-/* Placeholder for Images */
-.image-placeholder {
-  height: 150px;
+/* Image Styling for Both Sections */
+.event img {
+  width: 100px; /* Ensure consistent sizing */
+  height: 100px;
   background-color: #ddd;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
-/* Navigation Buttons */
-.carousel-button {
+/* General Styles for Both Sections */
+.events-section {
+  background-color: #f4f4f4;
+  padding: 20px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.events-section h2{
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.events-section p{
+  color: #666;
+}
+
+/* Carousel Container Styles */
+.events-section .carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+}
+
+/* Carousel Slider - General styles for all sliders */
+.events-section .carousel-slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+/* Card Styles for Each Section */
+.events-section .event-slide {
+  flex: 0 0 100%;
+  text-align: center;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 8px;
+  box-sizing: border-box;
+  margin: 0 10px; /* Adds margin between cards or slides */
+}
+
+/* Image Styles */
+.events-section .event img {
+  width: 100px;
+  height: 100px;
+  background-color: #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+/* Navigation Button Styles */
+.events-section .events-button {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  background: #007bff;
+  background-color: #007bff;
   color: white;
   border: none;
   border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
   cursor: pointer;
+  font-size: 20px;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  z-index: 10;
 }
 
-.carousel-button.prev {
+.events-section .events-button.prev {
   left: 10px;
 }
 
-.carousel-button.next {
+.events-section .events-button.next {
   right: 10px;
 }
 
-/* Pagination Dots */
-.pagination {
+/* Pagination Dot Styles */
+.events-section .pagination {
   margin-top: 20px;
   display: flex;
   justify-content: center;
 }
 
-.dot {
+.events-section .dot {
   display: inline-block;
   width: 10px;
   height: 10px;
@@ -222,14 +279,116 @@ abbr[data-original-title] {
   transition: background-color 0.3s;
 }
 
-.dot.active {
+.events-section .dot.active {
   background: #007bff;
 }
 
-address {
-  margin-bottom: 1rem;
-  font-style: normal;
-  line-height: inherit; }
+/* Upcoming Meeting Section Styles */
+.meeting-section {
+  background-color: #f4f4f4;  /* Light grey background for visibility */
+  padding: 20px;  /* Uniform padding around the section */
+  margin-top: 20px;  /* Space above the section to separate it from other content */
+  text-align: center;  /* Center the text within the section */
+}
+
+.meeting-section h2 {
+  color: #333;  /* Darker text for the heading */
+  margin-bottom: 20px;  /* Space below the heading */
+}
+
+/* Carousel Container */
+.meeting-section .carousel-container {
+  position: relative;
+  width: 100%;  /* Full width of the container to utilize space */
+  overflow: hidden;  /* Hide anything outside the bounds of the container */
+  display: flex;  /* Use flexbox for alignment */
+  align-items: center;  /* Vertically center the carousel elements */
+  justify-content: center;  /* Horizontally center the carousel elements */
+}
+
+/* Carousel Slider */
+.meeting-section .carousel-slider {
+  display: flex;
+  width: 100%;  /* Ensure the slider takes up all available horizontal space */
+  transition: transform 0.5s ease-in-out;  /* Smooth transition for sliding effect */
+}
+
+/* Individual Cards */
+.meeting-section .card {
+  flex: 0 0 20%;  /* Each card takes up 20% of the slider's width */
+  width: 200px;  /* Fixed width to ensure consistency */
+  height: 200px;  /* Fixed height to maintain a square aspect ratio */
+  background: white;  /* White background for cards */
+  margin: 0 10px;  /* Margin between cards */
+  padding: 10px;  /* Padding inside cards */
+  box-sizing: border-box;  /* Include padding in the width and height */
+  display: flex;  /* Use flexbox to align content */
+  flex-direction: column;  /* Stack content vertically */
+  align-items: center;  /* Center content horizontally */
+  justify-content: center;  /* Center content vertically */
+  border-radius: 10px;  /* Rounded corners for aesthetics */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);  /* Subtle shadow for depth */
+  text-align: center;  /* Center text within cards */
+}
+
+/* Image Placeholder */
+.meeting-section .image-placeholder {
+  width: 100%;  /* Full width of the card */
+  height: 70%;  /* 70% height relative to the card */
+  background-color: #ddd;  /* Grey background for placeholders */
+  border-radius: 8px;  /* Rounded corners for the image */
+  margin-bottom: 10px;  /* Space below the image */
+}
+
+/* Navigation Buttons */
+.meeting-section .carousel-button {
+  position: absolute;
+  top: 50%;  /* Align vertically */
+  transform: translateY(-50%);  /* Center vertically */
+  background-color: #007bff;  /* Blue background for visibility */
+  color: white;  /* White text for contrast */
+  border: none;
+  border-radius: 50%;  /* Circular buttons */
+  width: 40px;  /* Consistent width */
+  height: 40px;  /* Consistent height */
+  cursor: pointer;  /* Pointer cursor on hover */
+  display: flex;
+  align-items: center;  /* Center icon vertically */
+  justify-content: center;  /* Center icon horizontally */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);  /* Shadow for depth */
+}
+
+.meeting-section .carousel-button-prev {
+  left: 10px;  /* Position the previous button on the left */
+}
+
+.meeting-section .carousel-button-next {
+  right: 10px;  /* Position the next button on the right */
+}
+
+/* Pagination Dots */
+.meeting-section .pagination {
+  display: flex;
+  justify-content: center;  /* Align dots in the center */
+  margin-top: 10px;  /* Space above the dots */
+}
+
+.meeting-section .dot {
+  display: inline-block;
+  width: 10px;  /* Consistent dot size */
+  height: 10px;
+  background: #bbb;  /* Default dot color */
+  border-radius: 50%;  /* Rounded dots */
+  margin: 0 5px;  /* Space between dots */
+  cursor: pointer;  /* Pointer cursor on hover */
+  transition: background-color 0.3s;  /* Smooth transition for color change */
+}
+
+.meeting-section .dot.active {
+  background: #007bff;  /* Highlight the active dot */
+}
+
+
 
 ol,
 ul,
