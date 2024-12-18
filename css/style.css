@@ -85,34 +85,44 @@ abbr[data-original-title] {
   border-bottom: 0;
   text-decoration-skip-ink: none; }
   
-.event-search-container {
+  .event-search-container {
     text-align: center;
-    padding: 280px 20px 50px; /* Add top padding to push content lower */
-    margin-top: 60px; /* Ensure it clears the navbar */
-  }
-  
+    padding: 230px 20px 300px; /* Adjust padding as needed */
+    margin-top: 60px; /* Ensure it clears any fixed element like navbar */
+    background-color: rgba(255, 255, 255, 0.5); /* Semi-transparent white background */
+}
+
 .event-search-container h1 {
-    font-size: 24px;
+    font-size: 24px; /* Larger size for main heading */
     font-weight: bold;
     margin-bottom: 20px;
     color: #333;
-  }
-  
+}
+
 .search-bar {
     display: flex;
     justify-content: center;
-    gap: 10px;
-  }
-  
-.dropdown {
+    gap: 10px; /* Space between elements */
+    flex-wrap: wrap; /* Allows items to wrap in smaller screens */
+}
+
+.search-input, .filter-dropdown {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
-    width: 200px;
     background-color: #fff;
-  }
-  
+}
+
+.search-input {
+    flex-grow: 1; /* Allows the search input to take more space */
+    max-width: 400px; /* Maximum width */
+}
+
+.filter-dropdown {
+    width: 200px; /* Fixed width for consistency */
+}
+
 .search-button {
     padding: 10px 20px;
     font-size: 16px;
@@ -122,11 +132,24 @@ abbr[data-original-title] {
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s ease;
-  }
-  
+}
+
 .search-button:hover {
     background-color: #666;
-  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column; /* Stack elements vertically */
+    }
+
+    .search-input, .filter-dropdown, .search-button {
+        width: 100%; /* Full width for smaller devices */
+        margin-bottom: 10px; /* Adds space between stacked elements */
+    }
+}
+
 
   /* General Section Background */
   .events-header {
@@ -153,7 +176,7 @@ abbr[data-original-title] {
 .events-container {
   display: flex;
   overflow: hidden;
-  width: 100%; // Ensure the container is wide enough to hold any slide
+  width: 100%; 
   justify-content: center;
 }
 
@@ -165,7 +188,7 @@ abbr[data-original-title] {
   flex: 0 0 20%; /* Adjust based on visible cards */
   box-sizing: border-box;
   padding: 8px;
-  background: white;
+  background: lightblue;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   min-width: 250px; /* Ensure cards do not shrink too small */
@@ -175,14 +198,14 @@ abbr[data-original-title] {
 .event img {
   width: 100px; /* Ensure consistent sizing */
   height: 100px;
-  background-color: #ddd;
+  background-color: lightcyan;
   border-radius: 8px;
   margin-bottom: 10px;
 }
 
 /* General Styles for Both Sections */
 .events-section {
-  background-color: #f4f4f4;
+  background-color: black;
   padding: 20px;
   margin-top: 20px;
   text-align: center;
@@ -217,7 +240,7 @@ abbr[data-original-title] {
 .events-section .event-slide {
   flex: 0 0 100%;
   text-align: center;
-  background: white;
+  background: lightblue;
   border-radius: 10px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   padding: 8px;
@@ -370,7 +393,7 @@ abbr[data-original-title] {
 .meeting-section .pagination {
   display: flex;
   justify-content: center;  /* Align dots in the center */
-  margin-top: 10px;  /* Space above the dots */
+  margin-top: 15px;  /* Space above the dots */
 }
 
 .meeting-section .dot {
@@ -387,7 +410,94 @@ abbr[data-original-title] {
 .meeting-section .dot.active {
   background: #007bff;  /* Highlight the active dot */
 }
+ 
+/*Past Meeting Section */
 
+.past-meeting-section {
+  text-align: center;
+  padding: 20px;
+  margin-top: 20px;
+  background-color: #f4f4f4; /* Light gray background for the section */
+}
+
+.past-meeting-section h2 {
+  color: #333;
+  margin-bottom: 20px; /* Space below the heading */
+}
+
+.carousel-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.carousel-slider {
+  display: flex;
+  width: 100%;
+  transition: transform 0.5s ease-in-out;
+}
+
+.card {
+  flex: 0 0 20%; /* Each card takes up 20% of the carousel */
+  margin: 0 10px; /* Spacing between cards */
+  padding: 10px;
+  background: white;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.image-placeholder {
+  width: 100%;
+  height: 150px; /* Adjust height as necessary */
+  background-color: #ddd;
+  border-radius: 8px;
+  margin-bottom: 10px;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #007bff; /* Blue background */
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+}
+
+.carousel-button-prev {
+  left: 10px;
+}
+
+.carousel-button-next {
+  right: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Increase margin-top if needed to push the dots further down */
+  padding-bottom: 20px; /* Additional padding to ensure spacing from anything below */
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  background-color: #bbb;
+  border-radius: 50%;
+  margin: 0 5px;
+  cursor: pointer;
+}
+
+.dot.active {
+  background-color: #007bff; /* Active dot color */
+}
 
 
 ol,
@@ -5532,12 +5642,12 @@ a.close.disabled {
   vertical-align: text-top !important; }
 
 .bg-primary {
-  background-color: #007bff !important; }
+  background-color: transparent; }
 
 a.bg-primary:hover, a.bg-primary:focus,
 button.bg-primary:hover,
 button.bg-primary:focus {
-  background-color: #0062cc !important; }
+  background-color: transparent !important; }
 
 .bg-secondary {
   background-color: #6c757d !important; }
@@ -8749,7 +8859,7 @@ h1, h2, h3, h4, h5,
   background: #f8f9fa !important; }
 
 .bg-primary {
-  background: #1162fb; }
+  background: transparent }
 
 .btn {
   cursor: pointer;
@@ -9164,7 +9274,7 @@ textarea.form-control {
   visibility: hidden; }
 
 .bg-primary {
-  background: #1162fb !important; }
+  background: lightskyblue !important; }
 
 .media-custom {
   background: #fff; }

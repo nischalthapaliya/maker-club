@@ -37,9 +37,9 @@
 
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-				<li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
+				<li class="nav-item active"><a href="index.html" class="nav-link">Home</a></li>
 				<li class="nav-item"><a href="meeting.html" class="nav-link">Meeting and Events</a></li>
-				<li class="nav-item active"><a href="collaborate.html" class="nav-link">Collaborate</a></li>
+				<li class="nav-item"><a href="collaborate.html" class="nav-link">Collaborate</a></li>
 				<li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
 				<li class="nav-item cta mr-md-2"><a href="#" class="nav-link">Register</a></li>
 
@@ -88,25 +88,34 @@
           </div>
         </div>-->
 		
-		<div class="event-search-container">
+		<<div class="event-search-container">
 			<h1>Your Events, Your Way</h1>
 			<div class="search-bar">
-			  <select class="dropdown" id="event-select">
-				<option value="" disabled selected>Select Event</option>
-				<option value="web-development">Web Development</option>
-				<option value="ai-ml">AI & Machine Learning</option>
-				<option value="robotics">Robotics</option>
-			  </select>
-			  <select class="dropdown" id="location-select">
-				<option value="" disabled selected>Select Location</option>
-				<option value="london-campus">London Campus</option>
-				<option value="stratford-campus">Stratford Campus</option>
-			  </select>
-			  <button class="search-button">Search</button>
+				<input type="text" id="search-input" placeholder="Search events, locations, dates..." class="search-input">
+				<select class="filter-dropdown" id="type-filter">
+					<option value="">Event Type</option>
+					<option value="conference">Conference</option>
+					<option value="workshop">Workshop</option>
+					<option value="seminar">Seminar</option>
+					<option value="meetup">Meetup</option>
+				</select>
+				<select class="filter-dropdown" id="location-filter">
+					<option value="">Location</option>
+					<option value="new-york">New York</option>
+					<option value="san-francisco">San Francisco</option>
+					<option value="london">London</option>
+				</select>
+				<select class="filter-dropdown" id="date-filter">
+					<option value="">Date</option>
+					<option value="2021">2021</option>
+					<option value="2022">2022</option>
+					<option value="2023">2023</option>
+				</select>
+				<button onclick="performSearch()" class="search-button">Search</button>
 			</div>
-		  </div>
-      </div>
-    </div>
+		</div>
+
+		
 
     <section class="ftco-section services-section bg-primary">
       
@@ -243,6 +252,41 @@
 			</div>
 		</div>
 		<script src="/Users/nischalthapaliya/Downloads/maker club/js/script.js"></script>
+		
+
+		<div class="past-meeting-section">
+			<h2>Past Meeting</h2>
+			<div class="carousel-container">
+			  <button class="carousel-button-prev carousel-button" onclick="previousMeeting()">«</button>
+			  <div class="carousel-slider">
+				<div class="card">
+				  <div class="image-placeholder"></div>
+				  <p>Game Development & Virtual Reality (VR)</p>
+				</div>
+				<div class="card">
+				  <div class="image-placeholder"></div>
+				  <p>Data Science & Visualization</p>
+				</div>
+				<div class="card">
+				  <div class="image-placeholder"></div>
+				  <p>Robotics & Embedded Systems</p>
+				</div>
+				<div class="card">
+				  <div class="image-placeholder"></div>
+				  <p>Web Development & API Integration</p>
+				</div>
+			  </div>
+			  <button class="carousel-button-next carousel-button" onclick="nextMeeting()">»</button>
+			</div>
+			<div class="pagination">
+			  <span class="dot"></span>
+			  <span class="dot"></span>
+			  <span class="dot"></span>
+			  <span class="dot"></span>
+			</div>
+		  </div>
+		  
+		
 		
     </section>
    	
